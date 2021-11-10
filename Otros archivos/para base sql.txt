@@ -1,0 +1,158 @@
+
+Base de datos
+tablas y campos:
+
+usuario 
+	id_user, user , pass , fecha , id_tipo
+tipo usuario
+	id_tipo , tipo
+cliente
+	id_cliente , id_user , nombre , apellido , nacionalidad , estado
+contacto_Cl
+	id_ctCl, id_tipocont, id_cliente, contacto
+
+tarjetas
+	id_tarjeta, nombre, numero, CVVoCVC (3 o 4 deben encriptarse)
+
+personal
+	id_per, id_user, nombre, apellido
+contacto_P
+	id_ctP, id_tipocont, id_per, contacto
+
+config_hotel
+	id, nombre, logo, mision, vision, historia
+
+sucursales
+	id_sucursal, id, nombre, lat, lng, id_estado, baja
+
+tipo_estado
+	id_estado, estado
+
+contacto_suc
+	id_ctSuc, id_tipocont, id_sucursal, contacto
+
+tipo_contacto
+	id_tipocont, tipo
+
+img_sucursal
+	id_imgSuc, id_sucursal, url
+
+habitaciones
+	id_habitacion, id_tHabi, observaciones, baja
+
+img_habit
+	id_imgHabit, id_habitacion, url
+
+tipo_habitacion
+	id_tHabi, nombre, costo
+
+servicio
+	id_servicio, id_tSer, costo, baja
+tipo_servicio
+	id_tSer, nombre
+
+descuento
+	id_descu, nombre, cant, baja
+tipo_descuento
+	id_tDesc, nombre
+
+reserva
+	id_reserva, id_user, id_habitacion, fecha_ini, fecha_fin, hora, id_tarjeta, ID_ESTADO, OBSERVACIONES,  baja
+
+historial_servi
+	id_hist, id_user, id_servicio, fecha, hora, baja
+
+factura
+	id_fact, id_sucursal, id_reserva, id_hist, id_cliente, id_descu, fecha, hora, sutotal, total, baja
+
+reporte
+	id_reporte, nombre, fecha, hora, url, baja
+
+auditoria
+	cod, id_user, fecha, tabla, transaccion
+	
+
+Api bancaria
+registros en JSON
+Por ejemplo, las tarjetas VISA comienzan todas por 4, si son del tipo VISA Electron tienen rangos comprendidos entre 4026, 417500, 4508, 4844, 4913, 4917. Mastercard tiene asignados los rangos entre 51 y 55. Las tarjetas Maestro numeraciones de comienzo que sean alguno de estas series 5018, 5020, 5038, 6304, 6759, 6761, 6763.
+
+SINTAXIS SQL
+
+CREATE TABLE usuarios (
+  Id_Usuario int(5) NOT NULL,
+  usuario varchar(15) NOT NULL,
+  contraseña varchar(25) NOT NULL,
+  Fecha_Registro date NOT NULL,
+  id_tipousuaio varchar(50) NOT NULL
+) 
+
+ALTER TABLE TELEFONO
+ADD CONSTRAINT FK_ID_DUENIO_TEL
+FOREIGN KEY (ID_DUENIO_TEL)
+REFERENCES DUENIO_PACIENTE(ID_DUENIO);
+
+
+-------------ejemplo INGRESAR UN RAZAYESPECIE procedimiento almacenado---------
+
+CREATE OR REPLACE 
+PROCEDURE INGRESAR_RAZAYESPECIE (RAZA VARCHAR2,ESPECIE VARCHAR2,FAMILIA VARCHAR2, LONGEVIDAD VARCHAR2)
+IS
+BEGIN
+ INSERT INTO RAZA VALUES(CODX1.NEXTVAL,RAZA,LONGEVIDAD);
+ INSERT INTO ESPECIE VALUES(CODX1.NEXTVAL,ESPECIE,FAMILIA);
+ EXCEPTION
+ WHEN OTHERS THEN
+  DBMS_OUTPUT.PUT_LINE(SQLERRM);
+  END INGRESAR_RAZAYESPECIE;
+
+----------ejemplo modificar con procedimientos almcenados----------------------------------
+
+create or replace PROCEDURE MODIFICAR_RAZAYESPECIE (COD VARCHAR2, CAMPO VARCHAR2, DATO VARCHAR2)
+IS
+BEGIN
+IF CAMPO='NOMBRE' THEN
+    UPDATE RAZA SET NOMBRE=DATO WHERE COD_RAZA=COD;
+    ELSE
+    UPDATE ESPECIE SET NOMBRE=DATO WHERE COD_ESPECIE=COD;
+END IF;
+IF CAMPO='FAMILI_PERTENECE' THEN
+    UPDATE ESPECIE SET FAMILI_PERTENECE=DATO WHERE COD_ESPECIE=COD;
+END IF;
+
+IF CAMPO='LONGEVIDAD' THEN
+    UPDATE RAZA SET LONGEVIDAD=DATO WHERE COD_RAZA=COD;
+END IF;
+
+ EXCEPTION
+ WHEN OTHERS THEN
+  DBMS_OUTPUT.PUT_LINE(SQLERRM);
+  END  MODIFICAR_RAZAYESPECIE ;
+
+----------------------ejemplo de trigger insertar, modificar y eliminar tabla (AUDITORIA) -------------------------------
+
+CREATE OR REPLACE TRIGGER AUDITORIA_CITAS
+ AFTER INSERT ON CITAS
+ FOR EACH ROW
+ BEGIN
+  INSERT INTO AUDITORIA (CODIGO,USUARIO,FECHA,TABLA,TRANSACCION)
+  VALUES ('I-'||:NEW.COD_CITAS,USER,SYSDATE,'CITAS','INSERTO UNA CITA PARA EL '||:NEW.FECHA_CITA);
+ END;
+ 
+CREATE OR REPLACE TRIGGER AUDITORIA_CITAS_DELETE
+ BEFORE DELETE ON CITAS
+ FOR EACH ROW
+ BEGIN
+  INSERT INTO AUDITORIA (CODIGO,USUARIO,FECHA,TABLA,TRANSACCION)
+  VALUES ('I-'||:OLD.COD_CITAS,USER,SYSDATE,'CITAS','BORRO UNA CITA PARA EL '||:OLD.FECHA_CITA);
+ END;
+
+CREATE OR REPLACE TRIGGER AUDITORIA_CITAS_UPDATE
+ AFTER UPDATE ON CITAS
+ FOR EACH ROW
+ BEGIN
+  INSERT INTO AUDITORIA (CODIGO,USUARIO,FECHA,TABLA,TRANSACCION)
+  VALUES ('I-'||:OLD.COD_CITAS,USER,SYSDATE,'CITAS','ACTUALIZO LA CITA PARA EL '||:OLD.FECHA_CITA);
+ END;
+
+
+

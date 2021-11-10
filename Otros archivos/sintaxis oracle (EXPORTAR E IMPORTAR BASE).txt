@@ -1,0 +1,46 @@
+SINTAXIS EXPORTAR E IMPORTAR BASE
+
+video de como exportar en importar la base de orecle en sql developer
+https://youtu.be/2grq1r2NW8s
+
+==============CREACION DEL USUARIO==============
+
+create user hotel identified by " mihotel ";
+
+grant "CONNECT" to hotel ;
+
+se busca en usuarios y en roles se le todos los privilegios y por default
+en sirtema igual todos los privilegios menos "administer resource manager", "sysdba" y "sysoper" y listo.
+
+==========CREACION DE LA CONEXION O BASE==============
+
+luego se crea una nueva conexion con el usuario y contra creadas
+nombre de conexion: hotel
+usuario: hotel 
+contraseña: mihotel 
+
+============EXPORTAR BASE O USUAIO==============
+
+sintaxis para cmd
+primero moverse a la carpeta de oracle y fijarse que no este el Backup
+ahora moverse al carpeta en cmd pude ser que este de la siguiente forma 
+c:\oraclexe\sqldeveloper\sqlj por lo que solo seria agegarle cd para moverse
+luego para crearlo se deve poner exp usuario/contra del sistema o con el que entra al sql siempre
+luego 1 enter, y pedira el nombre recomendable Backup,
+luego preguntara que es lo que se exportara y en este caso solo importa los usuarios asi que
+se selecciona la opcion de usuarios puede ser 2, luego 3 y, una en cada pregunta 
+luego pregunta que usuario se quiere exportar y se pone el nombre del usuario "hotel"
+
+==============IMPORTAR BASE O USUARIO==============
+
+para impotar
+se crea el usuario y la base en el sistema
+primero moverse a la carpeta de oracle  
+c:\oraclexe\sqldeveloper\sqlj por lo que solo seria agegarle cd para moverse
+imp usuario/contra del sistema o con el que entra al sql siempre
+luego pregunta si soo importar la data, poner n, para este punto tener el archivo Backup
+en la carpeta para asi en e siguiente poner el nombre del archivo a importar Backup
+luego se le da n y luego las 3 y en las siguientes preguntas.
+
+
+ATT: KM.

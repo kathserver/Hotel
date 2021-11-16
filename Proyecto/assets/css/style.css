@@ -9,6 +9,10 @@ Version: 1.0
 /*@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900');*/
 
 /* ======= General Rules ======== */
+:root{
+    --colorBase:  #99D9D9;
+}
+
 html {
     width: 100%;
     margin: 0;
@@ -129,7 +133,7 @@ table tbody tr td {
 }
 
 .bg-theme {
-    background: #0D47A1;
+    background:  var(--colorBase);
     color: #fff;
 }
 
@@ -157,7 +161,7 @@ table tbody tr td {
     transform: translate(-50%, -50%);
     border-radius: 50%;
     border: 5px solid #fff;
-    box-shadow: 0 0 0 5px #0D47A1;
+    box-shadow: 0 0 0 5px  var(--colorBase);
     overflow: hidden;
 }
 
@@ -165,7 +169,7 @@ table tbody tr td {
     position: relative;
     width: 100%;
     height: 100%;
-    background: #0D47A1;
+    background:  var(--colorBase);
     border-radius: 50%;
     box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
 }
@@ -740,7 +744,7 @@ table tbody tr td {
 }
 
 .circular-chart.theme .circle {
-    stroke: #0D47A1;
+    stroke:  var(--colorBase);
 }
 
 .percentage {
@@ -781,7 +785,7 @@ table tbody tr td {
     display: inline-block;
     width: 40px;
     height: 40px;
-    background-color: #0D47A1;
+    background-color:  var(--colorBase);
     box-shadow: 0px 0px 0px 3px #ccc;
     border-radius: 50%;
     margin-left: -1rem;
@@ -847,7 +851,7 @@ table tbody tr td {
     display: block;
     width: 100%;
     text-align: left !important;
-    background: #0D47A1;
+    background:  var(--colorBase);
     border-radius: 0px;
     padding: 8px;
     color: #fff;
@@ -859,7 +863,7 @@ table tbody tr td {
 }
 
 .panel-title > button:hover {
-    background: #0D47A1;
+    background:  var(--colorBase);
     color: #fff;
 }
 
@@ -1000,8 +1004,8 @@ table tbody tr td {
 
 .custom-tabs .nav-tabs .nav-item.show .nav-link, .custom-tabs .nav-tabs .nav-link.active {
     background-color: transparent;
-    border-color: transparent transparent #0D47A1;
-    border-bottom: 4px solid #0D47A1 !important;
+    border-color: transparent transparent  var(--colorBase);
+    border-bottom: 4px solid  var(--colorBase) !important;
     font-weight: 500;
 }
 
@@ -1113,8 +1117,8 @@ table tbody tr td {
 
 .ajs-message.ajs-custom { 
     color: #fff !important;  
-    background-color: #0D47A1 !important;  
-    border-color: #0D47A1 !important;
+    background-color:  var(--colorBase) !important;  
+    border-color:  var(--colorBase) !important;
 }
 
 .ajs-message.ajs-custom:before { 
@@ -1466,7 +1470,7 @@ span.tag.label.label-info {
 }
 
 #costRevenue .ct-series-b .ct-bar {
-    stroke: #0D47A1;
+    stroke:  var(--colorBase);
 }
 
 #chartContainer .ct-series-a .ct-line {
@@ -1557,7 +1561,7 @@ span.tag.label.label-info {
 /*===========Login page CSS Rules===========*/
 
 .login-body {
-    background: url('../img/tarred.jpeg');
+    background: url('../img/fondo.jpg');
     background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1581,7 +1585,7 @@ span.tag.label.label-info {
 }
 
 .login-box-info {
-    background: #0D47A1;
+    background:  var(--colorBase);
     padding: 45px 30px !important;
     text-align: center;
 }
@@ -1604,23 +1608,23 @@ span.tag.label.label-info {
 }
 
 .btn-theme {
-    background: #0D47A1;
+    background:  var(--colorBase);
     color: #fff;
 }
 
 .btn-outline-theme {
-    color: #0D47A1;
-    border: 1px solid #0D47A1;
+    color:  var(--colorBase);
+    border: 1px solid  var(--colorBase);
     background: #fff;
 }
 
 .btn-outline-theme:hover {
     color: #fff;
-    background: #0D47A1;
+    background:  var(--colorBase);
 }
 
 .text-theme {
-    color: #0D47A1 !important;
+    color:  var(--colorBase) !important;
 }
 
 
@@ -1688,7 +1692,7 @@ span.tag.label.label-info {
 .search-single a {
     font-size: 14px;
     font-weight: 500;
-    color: #0D47A1;
+    color:  var(--colorBase);
 }
 
 .search-single p {
@@ -1886,21 +1890,21 @@ span.tag.label.label-info {
 .fc-content,
 .fc-title,
 .fc-time {
-    color: #0D47A1 !important;
+    color:  var(--colorBase) !important;
     font-weight: 400;
     font-size: 13px !important;
 }
 
 .fc-event {
     border-radius: 0px !important;
-    border: 1px solid #0D47A1 !important;
+    border: 1px solid  var(--colorBase) !important;
     border-left-width: 4px !important;
     background: #efefef !important;
     padding: 2px !important;
 }
 
 .fc-row thead th {
-    background: #0D47A1;
+    background:  var(--colorBase);
     border: none;
     padding: 7px;
     color: #fff;
@@ -1918,7 +1922,7 @@ span.tag.label.label-info {
 }
 
 .fc-button.fc-state-default.fc-state-active {
-    background: #0D47A1;
+    background:  var(--colorBase);
     color: #fff;
 }
 
@@ -2173,7 +2177,7 @@ span.tag.label.label-info {
         display: block;
         min-width: 100%;
         width: 100%;
-        background: #0D47A1;
+        background:  var(--colorBase);
         padding: 10px 7px;
         margin: 0px;
     }

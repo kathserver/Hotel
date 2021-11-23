@@ -56,9 +56,9 @@
 
             <!--Logo-->
             <div class="col-sm-3 pl-0 text-center header-logo">
-                <div class="bg-theme mr-3 pt-3 pb-2 mb-0">
+                <div class="bg-secondary mr-3 pt-3 pb-2 mb-0">
                     <h3 class="logo"><a href="#" class="text-secondary logo"><img src="../logo.ico" style="width:20%;">
-                            Vista Hermosa</a></h3>
+                        Vista Hermosa </a></h3>
                 </div>
             </div>
             <!--Logo-->
@@ -147,13 +147,11 @@
                                     height="40px">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right mt-13" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="#"><i class="fa fa-user pr-2"></i> Profile</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-user pr-2"></i> Perfil</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fa fa-th-list pr-2"></i> Tasks</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-th-list pr-2"></i> Tarea</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fa fa-book pr-2"></i> Projects</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fa fa-power-off pr-2"></i> Logout</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-power-off pr-2"></i> Salir</a>
                             </div>
                         </div>
                     </div>
@@ -174,7 +172,7 @@
                     <div class="avatar text-center">
                         <img src="../assets/img/profile.jpg" alt="" class="rounded-circle" />
                         <p><strong>Jonathan Clarke</strong></p>
-                        <span class="text-primary small"><strong>Colaborador</strong></span>
+                        <span class="text-theme small"><strong>Colaborador</strong></span>
                     </div>
                     <!--Image Avatar-->
 
@@ -186,16 +184,10 @@
                                     <span class="none">Dashboard </span>
                                 </a>
                             </li>
-                            </li>
-                            <li class="parent">
-                                <a href="widgets.html" class=""><i class="fa fa-puzzle-piece mr-3"></i>
-                                    <span class="none">Widget </span>
-                                </a>
-                            </li>
                             <li class="parent">
                                 <a href="#" onclick="toggle_menu('ul_element'); return false" class=""><i
                                         class="fa fa-puzzle-piece mr-3"></i>
-                                    <span class="none">UI Elements <i
+                                    <span class="none">Elementos <i
                                             class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
                                 <ul class="children" id="ul_element">
@@ -241,45 +233,57 @@
                 <h5 class="mb-3"><strong>Dashboard</strong></h5>
 
                 <!--Dashboard widget-->
-                <div class="mt-1 mb-3 button-container">
+                <div class="mt-1 mb-4 button-container">
                     <div class="row pl-0">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                        <div class="col-lg-3 col-md-3 col-sm-8 col-16 mb-3">
                             <div class="bg-white border shadow">
                                 <div class="media p-4">
-                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-theme">
+                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-green">
                                         <i class="fa fa-bed"></i>
                                     </div>
                                     <div class="media-body pl-2">
-                                        <h3 class="mt-0 mb-0"><strong>30 Habitaciones</strong></h3>
+                                        <h3 class="mt-0 mb-0"><strong>30 Hab.</strong></h3>
                                         <p><small class="text-muted bc-description">Ocupadas</small></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                         <div class="col-lg-3 col-md-3 col-sm-8 col-16 mb-3">
+                                <div class="bg-white border shadow">
+                                    <div class="media p-4">
+                                        <div class="align-self-center mr-3 rounded-circle notify-icon bg-secondary">
+                                            <i class="fa fa-bed"></i>
+                                        </div>
+                                        <div class="media-body pl-2">
+                                            <h3 class="mt-0 mb-0"><strong>0 Hab.</strong></h3>
+                                            <p><small class="text-muted bc-description">desocupadas</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-8 col-16 mb-3">
                             <div class="bg-white border shadow">
                                 <div class="media p-4">
-                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-danger">
-                                        <i class="fas fa-envelope-open"></i>
+                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-theme">
+                                        <img src="../assets/svgs/limpieza.svg" alt="" class="" style="width: 50%;">
                                     </div>
                                     <div class="media-body pl-2">
-                                        <h3 class="mt-0 mb-0"><strong>3 Habitaciones</strong></h3>
+                                        <h3 class="mt-0 mb-0"><strong>3 Hab.</strong></h3>
                                         <p><small class="text-muted bc-description">limpieza</small></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
-                            <div class="bg-theme border shadow">
+                        <div class="col-lg-3 col-md-3 col-sm-8 col-16 mb-3">
+                            <div class="bg-white border shadow">
                                 <div class="media p-4">
-                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-white">
-                                        <i class="fa fa-tags text-theme"></i>
+                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-dark">
+                                        <i class="fa fa-tags text-white"></i>
                                     </div>
                                     <div class="media-body pl-2">
-                                        <h3 class="mt-0 mb-0"><strong>33 Habitaciones</strong></h3>
-                                        <p><small class="bc-description text-white">Total</small></p>
+                                        <h3 class="mt-0 mb-0"><strong>33 Hab.</strong></h3>
+                                        <p><small class="text-muted bc-description">Total</small></p>
                                     </div>
                                 </div>
                             </div>
@@ -298,23 +302,6 @@
                             <div class="col-sm-8 pt-2">
                                 <h6 class="mb-4 bc-header">Order listing</h6>
                             </div>
-                            <div class="col-sm-4 text-right pb-3">
-                                <!--
-                                <button type="button" class="btn btn-danger icon-round shadow pull-right">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            -->
-                                <div class="pull-right mr-3 btn-order-bulk">
-                                    <!--  <select class="shadow bg-secondary bulk-actions">
-                                      <option data-display="<span class='text-white'><b>Bulk status</b></span>">Status options</option>
-                                        <option value="1">Pending</option>
-                                        <option value="2">Cancelled</option>
-                                        <option value="4">Delivered</option>
-                                    </select>-->
-                                </div>
-
-                                <div class="clearfix"></div>
-                            </div>
                         </div>
 
                         <div class="table-responsive product-list">
@@ -322,41 +309,25 @@
                             <table class="table table-bordered table-striped mt-0" id="productList">
                                 <thead>
                                     <tr>
-                                        <th style="width: 10px;" class="p-0 pr-4 align-middle">
-                                            <div class="form-check-box cta">
-                                                <span class="color1">
-                                                    <input type="checkbox" id="orderAll">
-                                                    <label for="orderAll"></label>
-                                                </span>
-                                            </div>
-                                        </th>
-                                        <th>Order ID</th>
-                                        <th>Customer</th>
-                                        <th>Status</th>
-                                        <th>Total</th>
-                                        <th>Order date</th>
-                                        <th>Action</th>
+                                        <th>ID</th>
+                                        <th>Habiacion</th>
+                                        <th>Estado</th>
+                                        <th>Precio</th>
+                                        <th>Fecha ocupado</th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td style="width: 10px;" class="p-0 pr-1 align-middle">
-                                            <div class="form-check-box cta">
-                                                <span class="color1">
-                                                    <input type="checkbox" id="order1">
-                                                    <label for="order1"></label>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td>Ord#13</td>
+                                        <td>13</td>
                                         <td class="align-middle">
-                                            Stephanie Cott
+                                            Habitación sencilla
                                         </td>
-                                        <td class="align-middle"><span class="badge badge-warning">Pending</span></td>
+                                        <td class="align-middle"><span class="badge badge-warning">Pendiente</span></td>
                                         <td class="align-middle">$200</td>
                                         <td>15/09/2018</td>
                                         <td class="align-middle text-center">
-                                            <button class="btn btn-theme" data-toggle="modal" data-target="#orderInfo">
+                                            <button class="btn btn-dark" data-toggle="modal" data-target="#orderInfo">
                                                 <i class="fa fa-eye"></i>
                                             </button>
                                             <button class="btn btn-success" data-toggle="modal"
@@ -365,23 +336,15 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 10px;" class="p-0 pr-1 align-middle">
-                                            <div class="form-check-box cta">
-                                                <span class="color1">
-                                                    <input type="checkbox" id="order2">
-                                                    <label for="order2"></label>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td>Ord#14</td>
+                                        <td>14</td>
                                         <td class="align-middle">
-                                            Andy Webb
+                                            Habitación sencilla
                                         </td>
-                                        <td class="align-middle"><span class="badge badge-danger">Cancelled</span></td>
+                                        <td class="align-middle"><span class="badge badge-success">Ocupada</span></td>
                                         <td class="align-middle">$200</td>
                                         <td>15/09/2018</td>
                                         <td class="align-middle text-center">
-                                            <button class="btn btn-theme" data-toggle="modal" data-target="#orderInfo">
+                                            <button class="btn btn-dark" data-toggle="modal" data-target="#orderInfo">
                                                 <i class="fa fa-eye"></i>
                                             </button>
                                             <button class="btn btn-success" data-toggle="modal"
@@ -390,23 +353,15 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 10px;" class="p-0 pr-1 align-middle">
-                                            <div class="form-check-box cta">
-                                                <span class="color1">
-                                                    <input type="checkbox" id="order3">
-                                                    <label for="order3"></label>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td>Ord#15</td>
+                                        <td>15</td>
                                         <td class="align-middle">
-                                            Andy Webb
+                                            Habitación sencilla
                                         </td>
-                                        <td class="align-middle"><span class="badge badge-success">Delivered</span></td>
+                                        <td class="align-middle"><span class="badge badge-success">Ocupada</span></td>
                                         <td class="align-middle">$200</td>
                                         <td>15/09/2018</td>
                                         <td class="align-middle text-center">
-                                            <button class="btn btn-theme" data-toggle="modal" data-target="#orderInfo">
+                                            <button class="btn btn-dark" data-toggle="modal" data-target="#orderInfo">
                                                 <i class="fa fa-eye"></i>
                                             </button>
                                             <button class="btn btn-success" data-toggle="modal"
@@ -415,23 +370,15 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 10px;" class="p-0 pr-1 align-middle">
-                                            <div class="form-check-box cta">
-                                                <span class="color1">
-                                                    <input type="checkbox" id="order4">
-                                                    <label for="order4"></label>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td>Ord#16</td>
+                                        <td>16</td>
                                         <td class="align-middle">
-                                            Stephanie Cott
+                                            Habitación sencilla
                                         </td>
-                                        <td class="align-middle"><span class="badge badge-warning">Pending</span></td>
+                                        <td class="align-middle"><span class="badge badge-warning">Pendiente</span></td>
                                         <td class="align-middle">$200</td>
                                         <td>15/09/2018</td>
                                         <td class="align-middle text-center">
-                                            <button class="btn btn-theme" data-toggle="modal" data-target="#orderInfo">
+                                            <button class="btn btn-dark" data-toggle="modal" data-target="#orderInfo">
                                                 <i class="fa fa-eye"></i>
                                             </button>
                                             <button class="btn btn-success" data-toggle="modal"
@@ -440,23 +387,15 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 10px;" class="p-0 pr-1 align-middle">
-                                            <div class="form-check-box cta">
-                                                <span class="color1">
-                                                    <input type="checkbox" id="order5">
-                                                    <label for="order5"></label>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td>Ord#17</td>
+                                        <td>17</td>
                                         <td class="align-middle">
-                                            Andy Webb
+                                            Habitación sencilla
                                         </td>
-                                        <td class="align-middle"><span class="badge badge-danger">Cancelled</span></td>
+                                        <td class="align-middle"><span class="badge badge-warning">Pendiente</span></td>
                                         <td class="align-middle">$200</td>
                                         <td>15/09/2018</td>
                                         <td class="align-middle text-center">
-                                            <button class="btn btn-theme" data-toggle="modal" data-target="#orderInfo">
+                                            <button class="btn btn-dark" data-toggle="modal" data-target="#orderInfo">
                                                 <i class="fa fa-eye"></i>
                                             </button>
                                             <button class="btn btn-success" data-toggle="modal"
@@ -465,23 +404,15 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 10px;" class="p-0 pr-1 align-middle">
-                                            <div class="form-check-box cta">
-                                                <span class="color1">
-                                                    <input type="checkbox" id="order6">
-                                                    <label for="order6"></label>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td>Ord#18</td>
+                                        <td>18</td>
                                         <td class="align-middle">
-                                            Andy Webb
+                                            Habitación sencilla
                                         </td>
-                                        <td class="align-middle"><span class="badge badge-success">Delivered</span></td>
+                                        <td class="align-middle"><span class="badge badge-success">Ocupada</span></td>
                                         <td class="align-middle">$200</td>
                                         <td>15/09/2018</td>
                                         <td class="align-middle text-center">
-                                            <button class="btn btn-theme" data-toggle="modal" data-target="#orderInfo">
+                                            <button class="btn btn-dark" data-toggle="modal" data-target="#orderInfo">
                                                 <i class="fa fa-eye"></i>
                                             </button>
                                             <button class="btn btn-success" data-toggle="modal"
@@ -490,23 +421,15 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 10px;" class="p-0 pr-1 align-middle">
-                                            <div class="form-check-box cta">
-                                                <span class="color1">
-                                                    <input type="checkbox" id="order7">
-                                                    <label for="order7"></label>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td>Ord#19</td>
+                                        <td>19</td>
                                         <td class="align-middle">
-                                            Stephanie Cott
+                                            Habitación Doble
                                         </td>
-                                        <td class="align-middle"><span class="badge badge-warning">Pending</span></td>
+                                        <td class="align-middle"><span class="badge badge-warning">Pendiente</span></td>
                                         <td class="align-middle">$200</td>
                                         <td>15/09/2018</td>
                                         <td class="align-middle text-center">
-                                            <button class="btn btn-theme" data-toggle="modal" data-target="#orderInfo">
+                                            <button class="btn btn-dark" data-toggle="modal" data-target="#orderInfo">
                                                 <i class="fa fa-eye"></i>
                                             </button>
                                             <button class="btn btn-success" data-toggle="modal"
@@ -670,8 +593,8 @@
                 <!--Footer-->
                 <div class="row mt-5 mb-4 footer">
                     <div class="col-sm-8">
-                        <span>&copy; All rights reserved 2019 designed by <a class="text-theme"
-                                href="#">A-Fusion</a></span>
+                        <span>&copy; All rights reserved 2021 designed by <a class="text-theme"
+                                href="#">JK-Fusion</a></span>
                     </div>
                     <div class="col-sm-4 text-right">
                         <a href="#" class="ml-2">Contact Us</a>

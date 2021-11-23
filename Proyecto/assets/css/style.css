@@ -11,6 +11,7 @@ Version: 1.0
 /* ======= General Rules ======== */
 :root{
     --colorBase:  #99D9D9;
+    --slideBar: #001628;
 }
 
 html {
@@ -304,7 +305,7 @@ table tbody tr td {
     content: '\f0c9';
     font-family: FontAwesome !important;
     display: inline-block;
-    color: #313246;
+    color: var(--slideBar);
     transition: 300ms;
 }
 
@@ -312,7 +313,7 @@ table tbody tr td {
     content: '\f00d';
     font-family: FontAwesome !important;
     display: inline-block;
-    color: #313246;
+    color: var(--slideBar);
     font-size: 18px;
 }
 

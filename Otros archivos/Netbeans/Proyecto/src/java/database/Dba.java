@@ -29,7 +29,7 @@ public class Dba {
             String BaseDeDatos = "jdbc:oracle:thin:@localhost:1521:XE";
             
             //poner usuario y contraseña
-            conexion = DriverManager.getConnection(BaseDeDatos, "HOTEL", "mihotel");
+            conexion = DriverManager.getConnection(BaseDeDatos, "hotel", "mihotel");
             query = conexion.createStatement();
             if (conexion != null) {
                 System.out.println("Conexion exitosa ");

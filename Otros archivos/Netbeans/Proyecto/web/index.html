@@ -8,6 +8,8 @@
       <meta name="keywords" content="">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
+    <!--Favicon Icon-->
+    <link rel="icon" href="logo.ico" type="image/x-icon">
       <!--Meta Responsive tag-->
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
@@ -36,25 +38,25 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-12 login-box-info text-black-50">
                     <h3 class="mb-4">Registrate</h3>
-                    <p class="mb-4">Si eres n amante del aire libre, grnades vista y un buen confort a la hora de descansar, somos el lugar indicado para tu hostadia, estamos en diferentes provincias y países, solo contactanos y te sorprenderas de nustros servicios.</p>
+                    <p class="mb-4">Si eres un amante del aire libre, grnades vista y un buen confort a la hora de descansar, somos el lugar indicado para tu hostadia, estamos en diferentes provincias y países, solo contactanos y te sorprenderas de nustros servicios.</p>
                     <p class="text-center"><a href="registro.html" class="btn btn-light">Registrate Aqui</a></p>
                 </div>
                 <div class="col-md-6 col-sm-6 col-12 login-box-form p-4">
                     <h3 class="mb-2">Ingresa</h3>
                     <small class="text-muted bc-description">Ingresa tus credenciales</small>
-                    <form action="conexion/autenticacion.jsp" class="mt-2">
+                    <form action="conexion/autenticacion.jsp" class="mt-2" method="POST">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control mt-0" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1" name="username" pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$">
+                            <input type="text" class="form-control mt-0" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1" name="username">
                         </div>
 
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"></i></span>
                             </div>
-                            <input type="text" class="form-control mt-0" placeholder="Contraseña" aria-label="Password" aria-describedby="basic-addon1" name="password" pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$">
+                            <input type="password" class="form-control mt-0" placeholder="Contraseña" aria-label="Password" aria-describedby="basic-addon1" name="password" pattern="[0-9]{4}">
                         </div>
 
                         <div class="form-group">

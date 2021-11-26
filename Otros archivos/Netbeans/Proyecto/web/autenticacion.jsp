@@ -14,13 +14,16 @@
             request.getParameter("password").equals(rs.getString(2))){
                 String r=rs.getString(3);
                 if(r.equals("1")){
-                    request.getRequestDispatcher("Administrador/index.html").forward(request, response);
+                    request.getRequestDispatcher("Administrador/index.jsp").forward(request, response);
+                     session.setAttribute("s_roll", "1");
                 }
                 if(r.equals("2")){
-                        request.getRequestDispatcher("Colaborador/index.html").forward(request, response);
+                        request.getRequestDispatcher("Colaborador/index.jsp").forward(request, response);
+                         session.setAttribute("s_roll", "2");
                 }
                 if(r.equals("3")){
-                        request.getRequestDispatcher("Cliente/index.html").forward(request, response);
+                        request.getRequestDispatcher("Cliente/index.jsp").forward(request, response);
+                         session.setAttribute("s_roll", "3");
                 }
              
                                           centinela="s";
@@ -31,6 +34,7 @@
             session.setAttribute("s_user", request.getParameter("username"));
             session.setAttribute("s_pass", request.getParameter("password"));
             //Llamando al jsp correspondiente
+            
            }
            else{
                out.print("<script>alert('El usuario que ingresó no existe.')</script>");

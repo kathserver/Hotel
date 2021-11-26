@@ -59,7 +59,7 @@
             <!--Logo-->
             <div class="col-sm-3 pl-0 text-center header-logo">
                 <div class="bg-secondary mr-3 pt-3 pb-2 mb-0">
-                    <h3 class="logo"><a href="index.html" class="text-secondary logo"><img src="../logo.ico"
+                    <h3 class="logo"><a href="index.jsp" class="text-secondary logo"><img src="../logo.ico"
                                 style="width:20%;">
                             Vista Hermosa </a></h3>
                 </div>
@@ -150,11 +150,11 @@
                                     height="40px">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right mt-13" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="perfil.html"><i class="fa fa-user pr-2"></i> Perfil</a>
+                                <a class="dropdown-item" href="perfil.jsp"><i class="fa fa-user pr-2"></i> Perfil</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="checkIn.html"><i class="fa fa-th-list pr-2"></i> Tarea</a>
+                                <a class="dropdown-item" href="checkIn.jsp"><i class="fa fa-th-list pr-2"></i> Tarea</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="../index.html"><i class="fa fa-power-off pr-2"></i> Salir</a>
+                                <a class="dropdown-item" href="../index.jsp"><i class="fa fa-power-off pr-2"></i> Salir</a>
                             </div>
                         </div>
                     </div>
@@ -183,7 +183,7 @@
                     <div class="sidebar-menu-container">
                         <ul class="sidebar-menu mt-4 mb-4">
                             <li class="parent">
-                                <a href="index.html" class=""><i class="fa fa-dashboard mr-3"> </i>
+                                <a href="index.jsp" class=""><i class="fa fa-dashboard mr-3"> </i>
                                     <span class="none">Dashboard </span>
                                 </a>
                             </li>
@@ -194,16 +194,16 @@
                                             class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
                                 <ul class="children" id="ul_element">
-                                    <li class="child"><a href="checkIn.html" class="ml-4"><i
+                                    <li class="child"><a href="checkIn.jsp" class="ml-4"><i
                                                 class="fa fa-angle-right mr-2"></i>
                                             Check In</a></li>
-                                    <li class="child"><a href="checkOut.html" class="ml-4"><i
+                                    <li class="child"><a href="checkOut.jsp" class="ml-4"><i
                                                 class="fa fa-angle-right mr-2"></i>
                                             Check Out</a></li>
                                 </ul>
                             </li>
                             <li class="parent">
-                                <a href="reserva.html" class=""><i class="fa fa-calendar-o mr-3"> </i>
+                                <a href="reserva.jsp" class=""><i class="fa fa-calendar-o mr-3"> </i>
                                     <span class="none">Realizar Reserva </span>
                                 </a>
                             </li>

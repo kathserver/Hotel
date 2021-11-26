@@ -1,3 +1,7 @@
+
+<%
+        if(session.getAttribute("s_roll").equals(2)){
+    %>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -47,6 +51,26 @@
     </div>
     <!--Page loader-->
 
+    <div class="swal-overlay swal-overlay--show-modal" tabindex="-1">
+  <div class="swal-modal" role="dialog" aria-modal="true"><div class="swal-icon swal-icon--success">
+    <span class="swal-icon--success__line swal-icon--success__line--long"></span>
+    <span class="swal-icon--success__line swal-icon--success__line--tip"></span>
+
+    <div class="swal-icon--success__ring"></div>
+    <div class="swal-icon--success__hide-corners"></div>
+  </div><div class="swal-title" style="">Success!</div><div class="swal-text" style="">You clicked the button successfully!</div><div class="swal-footer"><div class="swal-button-container">
+
+    <button class="swal-button swal-button--confirm">OK</button>
+
+    <div class="swal-button__loader">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+  </div></div></div></div>
+    
+    
     <!--Page Wrapper-->
 
     <div class="container-fluid">
@@ -57,7 +81,7 @@
             <!--Logo-->
             <div class="col-sm-3 pl-0 text-center header-logo">
                 <div class="bg-secondary mr-3 pt-3 pb-2 mb-0">
-                    <h3 class="logo"><a href="index.html" class="text-secondary logo"><img src="logo.ico" style="width:20%;">
+                    <h3 class="logo"><a href="index.jsp" class="text-secondary logo"><img src="logo.ico" style="width:20%;">
                         Vista Hermosa </a></h3>
                 </div>
             </div>
@@ -147,11 +171,11 @@
                                     height="40px">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right mt-13" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="perfil.html"><i class="fa fa-user pr-2"></i> Perfil</a>
+                                <a class="dropdown-item" href="perfil.jsp"><i class="fa fa-user pr-2"></i> Perfil</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="checkIn.html"><i class="fa fa-th-list pr-2"></i> Tarea</a>
+                                <a class="dropdown-item" href="checkIn.jsp"><i class="fa fa-th-list pr-2"></i> Tarea</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="../index.html"><i class="fa fa-power-off pr-2"></i> Salir</a>
+                                <a class="dropdown-item" href="../index.jsp"><i class="fa fa-power-off pr-2"></i> Salir</a>
                                 <!-- request.getSession().invalidate(); -->
                             </div>
                         </div>
@@ -181,7 +205,7 @@
                     <div class="sidebar-menu-container">
                         <ul class="sidebar-menu mt-4 mb-4">
                             <li class="parent">
-                                <a href="Colaborador/index.html" class=""><i class="fa fa-dashboard mr-3"> </i>
+                                <a href="Colaborador/index.jsp" class=""><i class="fa fa-dashboard mr-3"> </i>
                                     <span class="none">Dashboard </span>
                                 </a>
                             </li>
@@ -192,14 +216,14 @@
                                             class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
                                 <ul class="children" id="ul_element">
-                                    <li class="child"><a href="Colaborador/checkIn.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i>
+                                    <li class="child"><a href="Colaborador/checkIn.jsp" class="ml-4"><i class="fa fa-angle-right mr-2"></i>
                                             Check In</a></li>
-                                    <li class="child"><a href="Colaborador/checkOut.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i>
+                                    <li class="child"><a href="Colaborador/checkOut.jsp" class="ml-4"><i class="fa fa-angle-right mr-2"></i>
                                         Check Out</a></li>
                                 </ul>
                             </li>
                             <li class="parent">
-                                <a href="Colaborador/reserva.html" class=""><i class="fa fa-calendar-o mr-3"> </i>
+                                <a href="Colaborador/reserva.jsp" class=""><i class="fa fa-calendar-o mr-3"> </i>
                                     <span class="none">Realizar Reserva </span>
                                 </a>
                             </li>
@@ -588,7 +612,11 @@
     </div>
 
     <!--Page Wrapper-->
-
+    <%
+        }else{
+        request.getRequestDispatcher("/index.html").forward(request, response);
+}
+        %>
     <!-- Page JavaScript Files-->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery-1.12.4.min.js"></script>

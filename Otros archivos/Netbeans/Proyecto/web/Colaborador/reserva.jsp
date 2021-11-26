@@ -29,6 +29,13 @@
     <link rel="stylesheet" href="assets/js/calendar/bootstrap_calendar.css">
     <!--Nice select -->
     <link rel="stylesheet" href="assets/css/nice-select.css">
+    <!--Tarjeta CSS -->
+    <link rel="stylesheet" href="assets/css/tarjeta.css">
+    <!--Fullcalendar CSS-->
+    <link rel="stylesheet" href="assets/css/fullcalendar-3.9.0/fullcalendar.min.css">
+    <link rel="stylesheet" href="assets/css/fullcalendar-3.9.0/fullcalendar.print.min.css"  media='print'>
+    <!--Bootstrap Calendar-->
+    <link rel="stylesheet" href="assets/js/calendar/bootstrap_calendar.css">
 
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -57,7 +64,7 @@
             <!--Logo-->
             <div class="col-sm-3 pl-0 text-center header-logo">
                 <div class="bg-secondary mr-3 pt-3 pb-2 mb-0">
-                    <h3 class="logo"><a href="index.html" class="text-secondary logo"><img src="../logo.ico"
+                    <h3 class="logo"><a href="index.jsp" class="text-secondary logo"><img src="../logo.ico"
                                 style="width:20%;">
                             Vista Hermosa </a></h3>
                 </div>
@@ -148,11 +155,11 @@
                                     height="40px">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right mt-13" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="perfil.html"><i class="fa fa-user pr-2"></i> Perfil</a>
+                                <a class="dropdown-item" href="perfil.jsp"><i class="fa fa-user pr-2"></i> Perfil</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="checkIn.html"><i class="fa fa-th-list pr-2"></i> Tarea</a>
+                                <a class="dropdown-item" href="checkIn.jsp"><i class="fa fa-th-list pr-2"></i> Tarea</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="../index.html"><i class="fa fa-power-off pr-2"></i> Salir</a>
+                                <a class="dropdown-item" href="../index.jsp"><i class="fa fa-power-off pr-2"></i> Salir</a>
                             </div>
                         </div>
                     </div>
@@ -181,7 +188,7 @@
                     <div class="sidebar-menu-container">
                         <ul class="sidebar-menu mt-4 mb-4">
                             <li class="parent">
-                                <a href="index.html" class=""><i class="fa fa-dashboard mr-3"> </i>
+                                <a href="index.jsp" class=""><i class="fa fa-dashboard mr-3"> </i>
                                     <span class="none">Dashboard </span>
                                 </a>
                             </li>
@@ -192,16 +199,16 @@
                                             class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
                                 <ul class="children" id="ul_element">
-                                    <li class="child"><a href="checkIn.html" class="ml-4"><i
+                                    <li class="child"><a href="checkIn.jsp" class="ml-4"><i
                                                 class="fa fa-angle-right mr-2"></i>
                                             Check In</a></li>
-                                    <li class="child"><a href="checkOut.html" class="ml-4"><i
+                                    <li class="child"><a href="checkOut.jsp" class="ml-4"><i
                                                 class="fa fa-angle-right mr-2"></i>
                                             Check Out</a></li>
                                 </ul>
                             </li>
                             <li class="parent">
-                                <a href="reserva.html" class=""><i class="fa fa-calendar-o mr-3"> </i>
+                                <a href="reserva.jsp" class=""><i class="fa fa-calendar-o mr-3"> </i>
                                     <span class="none">Realizar Reserva </span>
                                 </a>
                             </li>
@@ -214,159 +221,23 @@
 
             <!--Content right-->
             <div class="col-sm-9 col-xs-12 content pt-3 pl-0">
-                <h5 class="mb-3"><strong>Check In</strong></h5>
+                <h5 class="mb-3"><strong>Reserva</strong></h5>
 
-                <div class="mt-1 mb-4 button-container">
-                    <div class="row pl-0">
-                        <!--Dashboard Profile card-->
-                        <div class="col-lg-3 col-md-3 col-sm-3 card-pro mb-3">
-                            <div class="card shadow">
-                                <div class="card-body">
-                                    <div class="media">
-                                        <div class="align-self-center mr-3 rounded-circle notify-icon bg-secondary">
-                                            <i class="fa fa-bed "></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <h6 class="mt-0"><strong>Reservacion 1</strong></h6>
-                                            <p class="mb-3 text-info"><strong>Pedro Canaca</strong></p>
+                <div class="row mt-3">
+                    <div class="col-md-12 col-sm-12">
+                        <!--Full Calendar-->
+                        <div class="mt-1 mb-3 p-3 button-container bg-white border shadow-sm lh-sm">
+                            <div class="email-msg">
+                                
+                                <div class="table-responsive" id="calendarFull"></div>
 
-
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-4 mb-4">
-                                        <div class="row user-about">
-                                            <div class="col-sm-4 col-4 border-right text-center">
-                                                <h4>20/12</h4>
-                                                <p>Fecha</p>
-                                            </div>
-                                            <div class="col-sm-4 col-4 text-center">
-                                                <h4>2</h4>
-                                                <p>Personas</p>
-                                            </div>
-                                            <div class="col-sm-4 col-4 border-left text-center">
-                                                <h4>1</h4>
-                                                <p>Habi.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="dropdown-divider"></div>
-
-                                    <p class="mb-3 mt-3 text-center p-space">
-                                        Lorem ipsum dolor sit ametetur adipisicing elit, sed do eiusmod tempor
-                                        incididunt adipisicing elit, sed do
-                                    </p>
-                                    <div class="align-self-center">
-                                        <button type="button" class="btn btn-primary">
-                                            <i class="fa fa-plus"></i> Check In
-                                        </button>
-                                    </div>
-                                </div>
                             </div>
                         </div>
-                        <!--Dashboard Profile card-->
-
-                        <!--Reservacion 2-->
-                        <div class="col-lg-3 col-md-3 col-sm-3 card-pro mb-3">
-                            <div class="card shadow">
-                                <div class="card-body">
-                                    <div class="media">
-                                        <div class="align-self-center mr-3 rounded-circle notify-icon bg-secondary">
-                                            <i class="fa fa-bed "></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <h6 class="mt-0"><strong>Reservacion 2</strong></h6>
-                                            <p class="mb-3 text-info"><strong>Arnold Maradiaga</strong></p>
-
-
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-4 mb-4">
-                                        <div class="row user-about">
-                                            <div class="col-sm-4 col-4 border-right text-center">
-                                                <h4>30/11</h4>
-                                                <p>Fecha</p>
-                                            </div>
-                                            <div class="col-sm-4 col-4 text-center">
-                                                <h4>1</h4>
-                                                <p>Personas</p>
-                                            </div>
-                                            <div class="col-sm-4 col-4 border-left text-center">
-                                                <h4>1</h4>
-                                                <p>Habi.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="dropdown-divider"></div>
-
-                                    <p class="mb-3 mt-3 text-center p-space">
-                                        Lorem ipsum dolor sit ametetur adipisicing elit, sed do eiusmod tempor
-                                        incididunt adipisicing elit, sed do
-                                    </p>
-                                    <div class="align-self-center">
-                                        <button type="button" class="btn btn-primary">
-                                            <i class="fa fa-plus"></i> Check In
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--reservacion 2-->
-
-                        <!--reservacion 3-->
-                        <div class="col-lg-3 col-md-3 col-sm-3 card-pro mb-3">
-                            <div class="card shadow">
-                                <div class="card-body">
-                                    <div class="media">
-                                        <div class="align-self-center mr-3 rounded-circle notify-icon bg-secondary">
-                                            <i class="fa fa-bed "></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <h6 class="mt-0"><strong>Reservacion 3</strong></h6>
-                                            <p class="mb-3 text-info"><strong>Penelope Cruz</strong></p>
-
-
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-4 mb-4">
-                                        <div class="row user-about">
-                                            <div class="col-sm-4 col-4 border-right text-center">
-                                                <h4>15/12</h4>
-                                                <p>Fecha</p>
-                                            </div>
-                                            <div class="col-sm-4 col-4 text-center">
-                                                <h4>4</h4>
-                                                <p>Personas</p>
-                                            </div>
-                                            <div class="col-sm-4 col-4 border-left text-center">
-                                                <h4>2</h4>
-                                                <p>Habi.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="dropdown-divider"></div>
-
-                                    <p class="mb-3 mt-3 text-center p-space">
-                                        Lorem ipsum dolor sit ametetur adipisicing elit, sed do eiusmod tempor
-                                        incididunt adipisicing elit, sed do
-                                    </p>
-                                    <div class="align-self-center">
-                                        <button type="button" class="btn btn-primary">
-                                            <i class="fa fa-plus"></i> Check In
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--reservacion 3-->
+                        <!--/Email messages-->
 
                     </div>
                 </div>
+
 
                 <!--Footer-->
                 <div class="row mt-5 mb-4 footer">
@@ -406,16 +277,10 @@
     <script src="assets/js/charts/jquery.flot.pie.min.js"></script>
     <script src="assets/js/charts/jquery.flot.categories.min.js"></script>
     <script src="assets/js/charts/jquery.flot.stack.min.js"></script>
-    <!--Chart JS-->
-    <script src="assets/js/charts/chart.min.js"></script>
-    <!--Chartist JS-->
-    <script src="assets/js/charts/chartist.min.js"></script>
-    <script src="assets/js/charts/chartist-data.js"></script>
-    <script src="../assets/js/charts/demo.js"></script>
-    <!--Maps-->
-    <script src="assets/js/maps/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="assets/js/maps/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="assets/js/maps/jvector-maps.js"></script>
+     <!--Full calendar-->
+     <script src="assets/css/fullcalendar-3.9.0/lib/moment.min.js"></script>
+     <script src="assets/css/fullcalendar-3.9.0/fullcalendar.min.js"></script>
+     <script src="assets/js/full-calendar.js"></script> 
     <!--Bootstrap Calendar JS-->
     <script src="assets/js/calendar/bootstrap_calendar.js"></script>
     <script src="assets/js/calendar/demo.js"></script>
@@ -424,6 +289,8 @@
 
     <!--Custom Js Script-->
     <script src="assets/js/custom.js"></script>
+    <!--Tarjeta-->
+    <script src="assets/js/tarjeta.js"></script>
     <!--Custom Js Script-->
     <script>
         //Nice select

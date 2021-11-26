@@ -21,11 +21,11 @@
     <link rel="stylesheet" href="../assets/css/fontawesome.css">
     <!--Animate CSS-->
     <link rel="stylesheet" href="../assets/css/chartist.min.css">
-    <!--Map-->
-    <link rel="stylesheet" href="../assets/css/jquery-jvectormap-2.0.2.css">
+    <!--Fullcalendar CSS-->
+    <link rel="stylesheet" href="../assets/css/fullcalendar-3.9.0/fullcalendar.min.css">
+    <link rel="stylesheet" href="../assets/css/fullcalendar-3.9.0/fullcalendar.print.min.css"  media='print'>
     <!--Bootstrap Calendar-->
     <link rel="stylesheet" href="../assets/js/calendar/bootstrap_calendar.css">
-    
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -52,7 +52,7 @@
             <!--Logo-->
             <div class="col-sm-3 pl-0 text-center header-logo">
                <div class="bg-dark mr-3 pt-3 pb-2 mb-0">
-                <h3 class="logo"><a href="index.html" class="text-secondary logo"><img src="../logo.ico" style="width:20%;">
+                <h3 class="logo"><a href="index.jsp" class="text-secondary logo"><img src="../logo.ico" style="width:20%;">
                     Vista Hermosa </a></h3>
                </div>
             </div>
@@ -169,23 +169,23 @@
                     <div class="sidebar-menu-container">
                         <ul class="sidebar-menu mt-4 mb-4">
                             <li class="parent">
-                                <a href="index.html" class=""><i class="fa fa-dashboard mr-3"> </i>
+                                <a href="index.jsp" class=""><i class="fa fa-dashboard mr-3"> </i>
                                     <span class="none">Principal </i></span>
                                 </a>
                             </li>
                             </li>
                             <li class="parent">
-                                <a href="reservar.html" class=""><i class="fa fa-calendar mr-3"></i>
+                                <a href="reservar.jsp" class=""><i class="fa fa-calendar mr-3"></i>
                                     <span class="none">Reservar </span>
                                 </a>
                             </li>
                             <li class="parent">
-                                <a href="servicios.html" class=""><i class="fa fa-puzzle-piece mr-3"></i>
+                                <a href="servicios.jsp" class=""><i class="fa fa-puzzle-piece mr-3"></i>
                                     <span class="none">Servicios </span>
                                 </a>
                             </li>
                             <li class="parent">
-                                <a href="ubicar.html" class=""><i class="fa fa-map-marker mr-3"></i>
+                                <a href="ubicar.jsp" class=""><i class="fa fa-map-marker mr-3"></i>
                                     <span class="none">Ubicanos! </span>
                                 </a>
                             </li>
@@ -198,104 +198,22 @@
 
             <!--Content right-->
             <div class="col-sm-9 col-xs-12 content pt-3 pl-0">
-                <h5 class="mb-3" ><strong>Principal</strong></h5>
+                <h5 class="mb-0" ><strong>Reservar</strong></h5>
+                <span class="text-secondary">Principal <i class="fa fa-angle-right"></i> Reservar</span>
                 
-                <div class="row mt-1">
-                    <div class="col-sm-8 col-md-8">
-                        <!--Analytics-->
-                        <div class="mt-1 mb-3 p-3 button-container bg-white shadow-sm border">
-                            <h1 class="text-center mb-5"><img src="../logo.ico"> Vista Hermosa</h1>    
+                <div class="row mt-3">
+                    <div class="col-md-12 col-sm-12">
+                        <!--Full Calendar-->
+                        <div class="mt-1 mb-3 p-3 button-container bg-white border shadow-sm lh-sm">
+                            <div class="email-msg">
+                                
+                                <div class="table-responsive" id="calendarFull"></div>
 
-                            <h3 class="mb-3">HISTORIA</h3>
-                            <P>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti molestiae odio corrupti, quos mollitia sapiente ab deserunt nemo sed debitis assumenda rem rerum. Quos, alias nulla. Iusto ullam tenetur velit.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae dolor laudantium ipsa ipsum mollitia excepturi quod quidem incidunt, itaque fuga alias sint corporis accusantium omnis sapiente explicabo fugit necessitatibus veritatis!
-                            </P>
-                            <P>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti molestiae odio corrupti, quos mollitia sapiente ab deserunt nemo sed debitis assumenda rem rerum. Quos, alias nulla. Iusto ullam tenetur velit.
-                            </P>
-                            <br>
-                            <div class="card-columns" id="lightgallery">
-                                <a href="../assets/img/gallery1.jpeg" class="card">
-                                    <img class="card-img-top" src="../assets/img/gallery1.jpeg" alt="Gallery1">
-                                </a>
-                                <a href="../assets/img/gallery2.jpeg" class="card">
-                                    <img class="card-img-top" src="../assets/img/gallery2.jpeg" alt="Gallery2">
-                                </a>
-                                <a href="../assets/img/gallery3.jpeg" class="card">
-                                    <img class="card-img-top" src="../assets/img/gallery3.jpeg" alt="Gallery3">
-                                </a>
                             </div>
-                            <br>
-                            <h3 class="mb-3">MISION</h3>
-                            <P>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti molestiae odio corrupti, quos mollitia sapiente ab deserunt nemo sed debitis assumenda rem rerum. Quos, alias nulla. Iusto ullam tenetur velit.
-                            </P>
-                            <br>
-                            <h3 class="mb-3">VISION</h3>
-                            <P>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti molestiae odio corrupti, quos mollitia sapiente ab deserunt nemo sed debitis assumenda rem rerum. Quos, alias nulla. Iusto ullam tenetur velit.
-                            </P>
-
                         </div>
-                        <!--/Analytics-->
+                        <!--/Email messages-->
 
                     </div>
-
-                    <div class="col-sm-4 col-md-4">
-                        <!--Analytics-->
-                        <div class="bg-white border shadow mb-4">
-                            <div class="media p-4">
-                                <div class="align-self-center mr-3 rounded-circle notify-icon_2 bg-white">
-                                    <i class="fa fa-globe text-theme"></i>
-                                </div>
-                                <div class="media-body pl-2">
-                                    <h3 class="mt-0 mb-0"><strong>1,215,509</strong></h3>
-                                    <p><small class="bc-description text-theme">TOTAL VISITANTES</small></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white border shadow mb-4">
-                            <div class="media p-4">
-                                <div class="align-self-center mr-3 rounded-circle notify-icon_2 bg-white">
-                                    <i class="fa fa-heart-o text-danger"></i>
-                                </div>
-                                <div class="media-body pl-2">
-                                    <h3 class="mt-0 mb-0"><strong>83,509</strong></h3>
-                                    <p><small class="bc-description text-danger">REACCIONES</small></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white border shadow">
-                            <div class="media p-4">
-                                <div class="align-self-center mr-3 rounded-circle notify-icon_2 bg-white">
-                                    <i class="fa fa-lightbulb text-success"></i>
-                                </div>
-                                <div class="media-body pl-2">
-                                    <h3 class="mt-0 mb-0"><strong>2,500</strong></h3>
-                                    <p><small class="text-success bc-description">SERVICIOS</small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/Analytics-->
-                        
-                        <div class="col-sm-15">
-                            <!--Jvector world map-->
-                            <div class="mt-1 mb-3 p-3 button-container bg-white shadow-sm border">
-                                <h6 class="mb-3">World Market</h6><hr>
-                                
-                                <div id="worldMarket" style="width: 100%; height: 350px"></div>
-                                
-                            </div>
-                            <!--/Jvector world map-->
-    
-                        </div>
-
-
-                    </div>
-                    
                 </div>
                 
                 
@@ -349,9 +267,10 @@
     <script src="../assets/js/maps/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="../assets/js/maps/jquery-jvectormap-world-mill-en.js"></script>
     <script src="../assets/js/maps/jvector-maps.js"></script>
-    <!--Bootstrap Calendar JS-->
-    <script src="../assets/js/calendar/bootstrap_calendar.js"></script>
-    <script src="../assets/js/calendar/demo.js"></script>
+    <!--Full calendar-->
+    <script src="../assets/css/fullcalendar-3.9.0/lib/moment.min.js"></script>
+    <script src="../assets/css/fullcalendar-3.9.0/fullcalendar.min.js"></script>
+    <script src="../assets/js/full-calendar.js"></script>
     <!--Nice select-->
     <script src="../assets/js/jquery.nice-select.min.js"></script>
 

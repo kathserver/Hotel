@@ -48,7 +48,10 @@
         </div>
     </div>
     <!--Page loader-->
-
+<%
+    HttpSession nsession = request.getSession(false);
+if(nsession!=null) {
+%>
     <!--Page Wrapper-->
 
     <div class="container-fluid">
@@ -154,7 +157,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="checkIn.jsp"><i class="fa fa-th-list pr-2"></i> Tarea</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="../index.jsp"><i class="fa fa-power-off pr-2"></i> Salir</a>
+                                <a class="dropdown-item" href="cerrarsesion.jsp"><i class="fa fa-power-off pr-2"></i> Salir</a>
                             </div>
                         </div>
                     </div>
@@ -545,6 +548,13 @@
 
             </div>
         </div>
+         <%
+        }else{
+             //request.getRequestDispatcher("../index.html").forward(request, response);
+                session.invalidate();
+                response.sendRedirect("../index.html");
+}
+    %>
 
         <!--Main Content-->
 

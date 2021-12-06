@@ -72,7 +72,10 @@
     
     
     <!--Page Wrapper-->
-
+<%
+    HttpSession nsession = request.getSession(false);
+if(nsession!=null) {
+%>
     <div class="container-fluid">
 
         <!--Header-->
@@ -175,7 +178,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="checkIn.jsp"><i class="fa fa-th-list pr-2"></i> Tarea</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="../index.jsp"><i class="fa fa-power-off pr-2"></i> Salir</a>
+                                <a class="dropdown-item" href="cerrarsesion.jsp"><i class="fa fa-power-off pr-2"></i> Salir</a>
                                 <!-- request.getSession().invalidate(); -->
                             </div>
                         </div>
@@ -610,13 +613,23 @@
         <!--Main Content-->
 
     </div>
-
+    <%
+        }else{
+             //request.getRequestDispatcher("../index.html").forward(request, response);
+                session.invalidate();
+                response.sendRedirect("../index.html");
+}
+    %>
     <!--Page Wrapper-->
+<<<<<<< HEAD
+
+=======
     <%
         }else{
         request.getRequestDispatcher("/index.html").forward(request, response);
 }
         %>
+>>>>>>> parent of 972e747 (netbeans)
     <!-- Page JavaScript Files-->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery-1.12.4.min.js"></script>

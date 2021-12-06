@@ -28,7 +28,15 @@
       <![endif]-->
   
       <title>Vista Hermosa  ||   Bienvenido </title>
-</head>
+      <script src="encriptar/md5.js" type="text/javascript"></script>
+        <script>
+          function modificarPASS(){
+              var sinCifrar =document.getElementById('password').value;           
+              document.getElementById('password').value=hex_md5(sinCifrar);                    
+              f1.submit();            
+          }
+      </script>
+ </head>
 <body class="login-body">
        <!--Login Wrapper-->
 
@@ -39,28 +47,28 @@
                 <div class="col-md-6 col-sm-6 col-12 login-box-info text-black-50">
                     <h3 class="mb-4">Registrate</h3>
                     <p class="mb-4">Si eres un amante del aire libre, grnades vista y un buen confort a la hora de descansar, somos el lugar indicado para tu hostadia, estamos en diferentes provincias y países, solo contactanos y te sorprenderas de nustros servicios.</p>
-                    <p class="text-center"><a href="registro.html" class="btn btn-light">Registrate Aqui</a></p>
+                    <p class="text-center"><a href="registro.jsp" class="btn btn-light">Registrate Aqui</a></p>
                 </div>
                 <div class="col-md-6 col-sm-6 col-12 login-box-form p-4">
                     <h3 class="mb-2">Ingresa</h3>
                     <small class="text-muted bc-description">Ingresa tus credenciales</small>
-                    <form action="conexion/autenticacion.jsp" class="mt-2" method="POST">
+                    <form action="autenticacion.jsp" class="mt-2" method="POST" name="f1">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control mt-0" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1" name="username">
+                            <input type="text" class="form-control mt-0" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1" name="username" id="username">
                         </div>
 
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"></i></span>
                             </div>
-                            <input type="password" class="form-control mt-0" placeholder="Contraseña" aria-label="Password" aria-describedby="basic-addon1" name="password" pattern="[0-9]{4}">
+                            <input type="password" class="form-control mt-0" placeholder="Contraseña" aria-label="Password" aria-describedby="basic-addon1" id="password" name="password" >
                         </div>
 
                         <div class="form-group">
-                            <button class="btn btn-theme btn-block p-2 mb-1 text-black-50">Ingresar</button>
+                            <button class="btn btn-theme btn-block p-2 mb-1 text-black-50" onclick="modificarPASS();">Ingresar</button>
                             <a href="Forgot-pass.html">
                                 <small class="text-theme"><strong>Olvidaste tu contraseña?</strong></small>
                             </a>
@@ -71,7 +79,9 @@
         </div>
     </div>    
 
-    <!--Login Wrapper-->
+    <!--Login Wrapper
+        onclick="modificarPASS();"
+    -->
 
     <!-- Page JavaScript Files-->
     <script src="assets/js/jquery.min.js"></script>

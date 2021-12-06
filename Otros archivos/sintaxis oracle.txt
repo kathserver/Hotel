@@ -5,3 +5,31 @@ SINTAXIS
 
 =======    RELACIONES   ===============
 
+=======    Trigger para auto incremento ===============
+CREATE OR REPLACE TRIGGER %triggername% (AutoIncremento_CLiente )
+BEFORE INSERT ON %tablename% FOR EACH ROW
+BEGIN
+  SELECT SECUENCIA_1X1.NEXTVAL
+  INTO :NEW.%columnname%
+  FROM DUAL;
+END;
+%seqname% se reemplazará por el nombre de la secuencia cuando genere la base de datos.
+
+%triggername% se reemplazará por el nombre del desencadenador cuando genere la base de datos.
+
+%columnname% se reemplazará por el nombre de la columna asociada al generar la base de datos.
+
+CREATE SEQUENCE SECUENCIA_1X1 INCREMENT 
+BY 1 
+MAXVALUE 200 
+MINVALUE 1 
+CACHE 20 
+ORDER;
+
+CREATE OR REPLACE TRIGGER AutoIncremento_CLiente 
+BEFORE INSERT ON CLIENTE FOR EACH ROW
+BEGIN
+  SELECT SECUENCIA_1X1.NEXTVAL
+  INTO :NEW.ID_CLIENTE
+  FROM DUAL;
+END;

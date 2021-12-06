@@ -18,3 +18,4 @@ END MODIFICAR_CLIENTES;
   
   execute LISTAR_USUARIO_ID('colab') 
   
+execute INGRESAR_USUARIO(kathy,81dc9bdb52d04dc20,3,null)

@@ -1,3 +1,4 @@
+<%@page import="database.randomPass"%>
 <%@page import="org.apache.tomcat.util.http.fileupload.FileItemFactory"%>
 <%@page import="java.sql.*"%>
 <%@page import="org.apache.tomcat.util.http.fileupload.FileItem"%>
@@ -38,137 +39,45 @@
                 var sinCifrar = document.getElementById('password').value;
                 document.getElementById('password').value = hex_md5(sinCifrar);
                 f1.submit();
+                enviarForms();
             }
+            
+            function enviarForms(){
+                nom=document.getElementById("nombre").value;
+                ape=document.getElementById("apellido").value;
+                nac=document.getElementById("nacionalidad").value;
+                user=document.getElementById("user").value;
+                email=document.getElementById("email").value;
+                num=document.getElementById("phone").value;
+                pass=document.getElementById("pass").value;
+                passv=document.getElementById("passv").value;
+                enviarCliente(nom,ape,nac,user);
+                enviarContacto(usu,email,1);
+                enviarContacto(usu,num,1);
+                document.location.href='index.html';
+            }
+            
+            function enviarCliente(nom,ape,nac,user) {
+                document.getElementById("uno").name=nom;
+                document.getElementById("dos").name=ape;
+                document.getElementById("tres").name=nac;
+                document.getElementById("cuatro").name=user;
+                form2.submit();
+                
+            }
+            function enviarContacto(usu,cont,tip) {
+                document.getElementById("cinco").name=usu;
+                document.getElementById("seis").name=cont;
+                document.getElementById("siete").name=tip;
+                form3.submit();
+            }
+
         </script>
         <title>Vista Hermosa  ||  Registro</title>
     </head>
 
     <body class="login-body">
 
-        <!--Login Wrapper-->
-        <%
-            String dir = "";
-            //clase para subir archivos a disco
-            ServletFileUpload fu = new ServletFileUpload(new DiskFileItemFactory());
-            List items = fu.parseRequest(new ServletRequestContext(request));
-            Iterator i = items.iterator();
-
-            String fileName = "";
-            String link = "";
-            String nombre = request.getParameter("nombre");
-            String apellido = request.getParameter("apellido");
-            String usuario = request.getParameter("user");
-            String pass = request.getParameter("pass");
-            String nacionalidad = request.getParameter("nacionalidad");
-            String correo = request.getParameter("email");
-            String num = request.getParameter("phone");
-
-            Dba db = new Dba(); //en la clase dba poner el user y pass
-            db.Conectar();
-
-            String url = "jdbc:oracle:thin:@localhost:1521:XE";
-            String user = "hotel";
-            String password = "mihotel";
-            Connection con = DriverManager.getConnection(url, user, password);
-
-            // ----------------para la imagen---------------------------------------
-            File fichero = null;
-            while (i.hasNext()) {
-                FileItem ff = (FileItem) i.next();
-                if (!ff.isFormField()) {
-                    long a = ff.getSize();
-                    //verificamos si el tamano del archivo es mayor a 0 bites
-                    if (a > 0) {
-                        fileName = ff.getName();
-                        fichero = new File(fileName);
-                        // escribimos el fichero en la carpeta que corresponde
-                        fichero = new File(application.getRealPath(""), fichero.getName());
-                        ff.write(fichero);
-                    }
-                } else {
-                    if (ff.getFieldName().compareTo("nombre" + "apellido") == 0) {
-                        link = ff.getString();
-                    }
-                }
-            }
-
-            //------------Ingreso y creacion de Usuario del Cliente---------------------
-            try {
-                PreparedStatement stmt = con.prepareStatement(""
-                        + "declare "
-                        + "begin"
-                        + "   INGRESAR_USUARIO(?,?,?,?);"
-                        + "   commit;"
-                        + "end;");
-                //pedir los parametros para enviar al metodo
-                stmt.setInt(1, 200);//1 codigo = 100  
-                stmt.setString(4, "" + usuario + " " + pass + " " + 3 + " " + application.getContextPath() + "/" + fichero.getName() + " ");
-                //"usuario, nombre, apellido, nacionalidad"); 
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            //--------------------Ingreso del Cliente---------------------------------------
-            try {
-                //consulta del id del cliente recien ingresado
-                db.query.execute("SELECT ID_USER into v_idUsuario FROM USUARIO WHERE USUARIO=" + usuario + "");
-                ResultSet rs = db.query.getResultSet();
-                int id_usuario = Integer.parseInt(rs.getString(1));
-
-                //Ingreso del Cliente
-                try {
-                    PreparedStatement stmt = con.prepareStatement(""
-                            + "declare "
-                            + "begin"
-                            + "   INGRESAR_CLIENTE(?,?,?,?);"
-                            + "   commit;"
-                            + "end;");
-                    //pedir los parametros para enviar al metodo
-                    stmt.setInt(1, 200);//1 codigo = 100  
-                    stmt.setString(4, "" + id_usuario + " " + nombre + " " + apellido + " " + nacionalidad + "");
-                    //"usuario, nombre, apellido, nacionalidad"); 
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                request.getRequestDispatcher("index.html").forward(request, response);
-                db.desconectar();
-            } catch (Exception e) {
-                out.println(e);
-                e.printStackTrace();
-            }
-
-            //------------------Ingreso de contacto del Cliente-------------------------
-            try {
-                //consulta del id del cliente recien ingresado
-                db.query.execute("SELECT ID_CLIENTE FROM CLIENTE WHERE ID_USER=" + usuario + "");
-                ResultSet rs = db.query.getResultSet();
-                int id_cliente = Integer.parseInt(rs.getString(1));
-
-                //Ingreso de Usuario e imagen
-                try {
-                    PreparedStatement stmt = con.prepareStatement(""
-                            + "declare "
-                            + "begin"
-                            + "   INGRESAR_CNTCLIENTE(?,?,?);"
-                            + "   commit;"
-                            + "end;");
-                    //pedir los parametros para enviar al metodo
-                    stmt.setInt(1, 200);//1 codigo = 100  
-                    stmt.setString(3, "" + 1 + " " + correo + " " + id_cliente + "");
-                    stmt.setString(3, "" + 2 + " " + num + " " + id_cliente + "");
-                    //"usuario, nombre, apellido, nacionalidad"); 
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                request.getRequestDispatcher("index.html").forward(request, response);
-                db.desconectar();
-            } catch (Exception e) {
-                out.println(e);
-                e.printStackTrace();
-            }
-
-
-        %>
         <div class="container-fluid login-wrapper">
             <div class="login-box">
                 <h1 class="text-center mb-5"><img src="logo.ico">  Vista Hermosa</h1>    
@@ -181,7 +90,7 @@
                     <div class="col-md-6 col-sm-6 col-12 login-box-form p-4">
                         <h3 class="mb-2">Registro</h3>
                         <small class="text-muted bc-description">Crea una cuenta nueva!</small>
-                        <form action="registro.jsp" class="mt-2" name="f1" method="POST" enctype="MULTIPART/FORM-DATA">
+                        <form action="register.jsp" class="mt-2" name="f1" method="POST" >
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-id-badge"></i></span>
@@ -194,19 +103,6 @@
                                 </div>
                                 <input type="text" class="form-control mt-0" placeholder="Apellido" aria-label="name" aria-describedby="basic-addon1" name="apellido" id="apellido">
                             </div>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                </div>
-                                <input type="text" class="form-control mt-0" placeholder="User" aria-label="Username" aria-describedby="basic-addon1" name="user" id="user">
-                            </div>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"></i></span>
-                                </div>
-                                <input type="text" class="form-control mt-0" placeholder="Contraseña" aria-label="Password" aria-describedby="basic-addon1" name="pass" id="pass">
-                            </div>
-
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
@@ -252,11 +148,35 @@
                             <div class="form-group">
                                 <button class="btn btn-theme btn-block p-2 mb-1" onclick="modificarPASS();">Registrarme</button>
                             </div>
+                            <%
+                                String passw, pass, usuario;
+                                int cant = (int) (Math.random());
+                                randomPass rp = new randomPass();
+                                passw = rp.hacerPassword(cant) + rp.hacerPassword(cant);
+                                pass = rp.convert(passw);
+                                usuario = "user" + rp.hacerPassword(cant);
+                            %>
+                            <input type="hidden" name="user" id="user" value="<%=usuario%>" />
+                            <input type="hidden" name="pass" id="pass" value="<%=pass%>" />
+                            <input type="hidden" name="passv" id="passv" value="<%=passw%>" />
                         </form>
                     </div>
                 </div>
             </div>
         </div>    
+
+        <!--Envio de otros form para la info-->
+        <form id="form2" acrion="registroClienteContact.jsp" method="post">
+       <input type="hidden" name="uno" id="uno" />
+       <input type="hidden" name="dos" id="dos" />
+       <input type="hidden" name="tres" id="tres" />
+       <input type="hidden" name="cuatro" id="cuatro" />
+        </form>
+        <form id="form3" acrion="registroCliente.jsp" method="post">
+        <input type="hidden" name="cinco" id="cinco" />
+        <input type="hidden" name="seis" id="seis" />
+        <input type="hidden" name="siete" id="siete" />
+        </form>
 
         <!--Login Wrapper-->
 
